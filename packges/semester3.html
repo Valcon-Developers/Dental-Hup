@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon"       href="imgs/tooth-icon.jpg" type="../image/png">
+    <title>Semester 3 packege</title>
+</head>
+<body>
+
+
+
+
+
+    <div class="container d-flex flex-wrap" id="products">
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let products = [
+            {id:20,title:"Micromotor",source:'../imgs/product2/1.png',},
+            {id:21,title:"High & low speed contra",source:'../imgs/product2/2.jpg',},
+            {id:22,title:"Articulator",source:'../imgs/product2/3.png',},
+            {id:23,title:"Magnet cast + Acrylic anterior and posterior teeth",source:'../imgs/product2/4.png'},
+            {id:24,title:"Burs: Round bur, Fissure bur, Inverted cone bur with (3 different sizes 0.8, 1, 2), 330 bur, 245 bur.",source:'../imgs/product2/5.png'},
+            {id:25,title:"Low diamond stones",source:'../imgs/product2/6.png',description:" (  tapered with round end size 1,2 & Tapered with flat end size 1,2 &  Fine tapered stone. (Short shank and long shank) &  Finishing stones"},
+            {id:26,title:"Acrostone",source:'../imgs/product2/7.png',},
+            {id:27,title:"Putty index",source:'../imgs/product2/8.png',},
+            {id:28,title:"Acrylic teeth size 16",source:"../imgs/product2/9.png",description:"Acrylic resin teeth size 16 (Anterior and posterior)"},
+            {id:29,title:"Mirrors",source:'../imgs/product2/10.png',},
+            {id:30,title:"Probes",source:'../imgs/product2/11.png',},
+            {id:31,title:"Tweezers",source:'../imgs/product2/12.png',},
+            {id:32,title:"Periodontal probes",source:'../imgs/product2/13.png',},
+            {id:33,title:"Torch",source:"../imgs/product2/14.png",},
+            {id:34,title:"Acrylic bur",source:'../imgs/product2/15.png',},
+            {id:35,title:"Pink wax (cavex)",source:'../imgs/product2/18.png',},
+            {id:36,title:"Glass slabs x2",source:'../imgs/product2/19.png',},
+            {id:37,title:"Plaster",source:'../imgs/product2/20.png',},
+            {id:38,title:"Surgical handle",source:"../imgs/product2/21.png",},
+            {id:39,title:"Surgical blade size 15",source:'../imgs/product2/22.png',},
+            {id:40,title:"Plasticine clay",source:'../imgs/product2/23.png',},
+            {id:41,title:"Mixing spatula",source:'../imgs/product2/24.png',},
+            {id:42,title:"Separating medium",source:'../imgs/product2/25.png',},
+            {id:43,title:"Rubber bands ",source:"../imgs/product2/26.png",},
+            {id:44,title:"edentulous stone casts",source:'../imgs/product2/27.png',description:"upper and lower edentulous stone casts"},
+            {id:45,title:"Glass cup",source:'../imgs/product2/28.png',},
+            {id:46,title:"Sanding paper",source:'../imgs/product2/29.png',},
+            {id:47,title:"Rubber bow x2",source:'../imgs/product2/30.png',},
+            {id:48,title:" Napkins and napkin clips",source:"../imgs/product2/31.png",},
+            {id:49,title:"Dental film barrier",source:'../imgs/product2/32.png',},
+            {id:50,title:"Toolbox",source:'../imgs/product2/33.png',},
+            {id:51,title:"Spackling knife",source:'../imgs/product2/34.png',},
+    ]
+
+    function card(i){
+    return(
+        `
+        
+        <div class="card  text-dark h5 card-product search-card" style="border:solid 2px black; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); grid-gap: 10px; max-height: 390px;">
+            <div class="card-img" onclick="showDetailes(${i})" style="height: 200px; overflow: hidden;">
+                <img src=${products[i].source} alt=""  style=" ">
+            </div>
+            <div class="card-body" onclick="showDetailes(${i})" style="margin-top:-40px">
+                <div class="card-title search-title">${products[i].title}</div>
+            </div>
+        </div>
+        `);
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    let sectionProducts = document.getElementById('products');
+    if (sectionProducts) {
+        for (let i = 0; i < products.length; i++) {
+            sectionProducts.innerHTML += card(i); // إضافة كل منتج
+        }
+    }
+});
+
+
+    </script>
+
+
+
+    
+</body>
+</html>

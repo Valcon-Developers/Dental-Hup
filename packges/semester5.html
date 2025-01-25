@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon"       href="imgs/tooth-icon.jpg" type="../image/png">
+    <title>Semester 5 packege</title>
+</head>
+<body>
+
+
+
+
+
+    <div class="container d-flex flex-wrap" id="products">
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let products = [
+        {id:0,title:"Partial Stock Trays",price:250,source:"../imgs/products/300.PNG",description:"Partial Stock Trays (Aluminum trays sizes 1,2,3"},
+        {id:1,title:"Alginate (with measures)",price:340,source:"../imgs/products/301.PNG",description:""},
+        {id:2,title:"Alginate Spatula",price:700,source:"../imgs/products/302.PNG",description:""},
+        {id:3,title:"Scissors",price:110,source:"../imgs/products/303.PNG",description:""},
+        {id:4,title:"Green stick compound",price:999,source:'../imgs/products/304.PNG',description:""},
+        {id:5,title:"Dental stone ",price:250,source:"../imgs/products/305.PNG",description:"Dental stone type III or IV"},
+        {id:6,title:"Disinfection Spray",price:340,source:"../imgs/products/306.PNG",description:""},
+        {id:7,title:"Sectional Trays ",price:700,source:"../imgs/products/307.JPG",description:"Sectional Trays (both metal and plastic)"},
+        {id:8,title:"Full-arch trays",price:110,source:"../imgs/products/308.JPG",description:"Full-arch trays (both metal and plastic)"},
+        {id:9,title:"Gutta Perch",price:999,source:'../imgs/products/309.JPG',description:""},
+        {id:10,title:"Sealers",price:250,source:"../imgs/products/310.jpg",description:""},
+        {id:11,title:"Putty zeta plus",price:340,source:"../imgs/products/311.jpg",description:""},
+        {id:12,title:"charm temprycrown",price:700,source:"../imgs/products/312.jpg",description:""},
+    ]
+
+    function card(i){
+    return(
+        `
+        
+        <div class="card  text-dark h5 card-product search-card" style="border:solid 2px black; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); grid-gap: 10px; max-height: 390px;">
+            <div class="card-img" onclick="showDetailes(${i})" style="height: 200px; overflow: hidden;">
+                <img src=${products[i].source} alt=""  style=" ">
+            </div>
+            <div class="card-body" onclick="showDetailes(${i})" style="margin-top:-40px">
+                <div class="card-title search-title">${products[i].title}</div>
+            </div>
+        </div>
+        `);
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    let sectionProducts = document.getElementById('products');
+    if (sectionProducts) {
+        for (let i = 0; i < products.length; i++) {
+            sectionProducts.innerHTML += card(i); // إضافة كل منتج
+        }
+    }
+});
+
+
+    </script>
+
+
+
+    
+</body>
+</html>
